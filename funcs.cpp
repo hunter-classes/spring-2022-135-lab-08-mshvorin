@@ -98,6 +98,20 @@ void whiteBoxOutline(std::string input) {
   writeImage(input,out, h, w);
 
 }
+void scale(std::string input) {
+  int img[MAX_H][MAX_W];
+  int h, w;
+  readImage(input, img, h, w); 
+  int out[MAX_H][MAX_W];
+
+  for(int row = 0; row < h; row++) {
+    for(int col = 0; col < w; col++) {
+      out[row][col] = 255 -img[row][col];
+    		}
+  	}
+  writeImage(input,out, h, w);
+}
+
 void pixelate(std::string input) {
   int h;
   int w;
